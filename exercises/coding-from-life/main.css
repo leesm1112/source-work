@@ -6,7 +6,14 @@ body {
 .container {
     width: 100vw;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center {
     position: relative;
+    display: flex;
 }
 
 .smile_ball {
@@ -16,11 +23,7 @@ body {
 
     position: relative;
 
-    top: 50%;
-    bottom: 10%;
-    left: 10%;
-
-    order: 2px solid black;
+    border: 0px solid yellow;
     border-radius: 300px;
 }
 
@@ -34,7 +37,7 @@ body {
     top: 50px;
     bottom: 10px;
 
-    order: 2px solid black;
+    border: 2px solid black;
     border-radius: 50%;
 }
 
@@ -48,18 +51,33 @@ body {
     top: 50px;
     bottom: 10px;
 
-    order: 2px solid black;
+    border: 2px solid black;
     border-radius: 50%;
 }
 
 .smile_lip {
     width: 150px;
-    height: 10px;
-    background-color: black;
+    height: 100px;
 
     position: absolute;
-    left: 60%;
-    top: 50px;
-    bottom: 10px;
+    left: 25%;
+    bottom: 20%;
+
+    border: 10px solid black;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    border-top: 0;
+}
+
+.plant_pot {
+    width: 150px;
+    height: 80px;
+    background-color: wheat;
+
+    position: relative;
+    left: 0%;
+    bottom: 10%;
+
+    z-index: -1;
 
 }
