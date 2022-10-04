@@ -10,24 +10,33 @@ body {
 }
 
 .heading {
-    font-family: "Inconsolata", monospace;
-    font-size: 90px;
+    font-family: 'Noto Serif KR', serif;    
+    font-weight: 700;
+    font-size: 70pt;
     text-align: center;
     text-transform: capitalize;
     /* justify-items: center; */
 }
 
-.bodytxt {
-    font-family: "Inconsolata", monospace;
+.titlebodytxt {
+    font-family: 'Noto Serif KR', serif;    
+    font-weight: 400;
     font-size: 16px;
     text-align: center;
-    float:inline-start;
-    /* transform: rotate(-5.82704deg); */
-    /* display: flex; */
+    padding: 0;
+    margin: 0; 
+}
+
+.bodytxt {
+    font-family: 'Noto Serif KR', serif;    
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    width: 350px;
+    /* inline-size: 350px; */
     /* justify-content: center; */
-    /* width: 50vw; */
-    /* padding: 0;
-    margin: 0;  */
+    /* padding: 0px; */
+    /* margin: 10px;  */
 }
 
 /* .center {
@@ -57,48 +66,46 @@ ul {
     width: 100vw;
     height: 100vh;
     position: relative;
-        }
+    }
 
-        img {
-            max-width: 500px;
-        }
+img {
+    max-width: 500px;
+    }
 
 .slide-1 {
     /* background-color: red; */
     }
 
-.slide-2 p {
+/* .slide-2 p {
     font-family: monospace;
     font-size: 16px;
     text-align: center;
     text-transform:initial;
     justify-items: center;
     position: relative;
-    }
+    } */
 
 .image-1 {
     position: absolute;
     max-width:75%;
     /* height: auto; */
-    right: 0%;
+    right: 10%;
     bottom: 0%;
-
 }
+
 .image-2 {
     position: absolute;
     max-width:75%;
     /* height: auto; */
-    right: 0%;
+    right: 10%;
     bottom: 0%;
-    float: left;
-
 }
 
 .image-3 {
     position: absolute;
     max-width:75%;
     /* height: auto; */
-    right: 0%;
+    right: 10%;
     bottom: 0%;
 }
 
@@ -106,7 +113,7 @@ ul {
     position: absolute;
     max-width:75%;
     /* height: auto; */
-    right: 0%;
+    right: 10%;
     bottom: 0%;
 }
 
@@ -122,7 +129,7 @@ ul {
     position: absolute;
     max-width:75%;
     /* height: auto; */
-    right: 0%;
+    right: 10%;
     bottom: 0%;
 }
 
@@ -130,7 +137,7 @@ ul {
     position: absolute;
     max-width:75%;
     /* height: auto; */
-    right: 0%;
+    right: 10%;
     bottom: 0%;
 }
 
@@ -146,7 +153,7 @@ ul {
     position: absolute;
     max-width:75%;
     /* height: auto; */
-    right: 0%;
+    right: 10%;
     bottom: 0%;
 }
 
@@ -154,6 +161,6 @@ ul {
     position: absolute;
     max-width:75%;
     /* height: auto; */
-    right: 0%;
+    right: 10%;
     bottom: 0%;
 }

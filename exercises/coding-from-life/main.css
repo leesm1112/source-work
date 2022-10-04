@@ -1,6 +1,6 @@
 /* Your CSS Here! */
 body {
-    background-color: #ffffff;
+    background-color: #000000;
 }
 
 .container {
@@ -63,13 +63,24 @@ body {
     left: 25%;
     bottom: 20%;
 
-    border: 10px solid black;
+    border: 20px solid black;
     border-bottom-left-radius: 100%;
     border-bottom-right-radius: 100%;
     border-top: 0;
 }
 
-.plant_pot {
+.txt {
+    color: yellow;
+    font-size: 48pt;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    right: 300px;
+    padding: 50px;
+    margin: 0px; 
+    position: absolute;
+
+}
+/* .plant_pot {
     width: 150px;
     height: 80px;
     background-color: wheat;
@@ -80,4 +91,4 @@ body {
 
     z-index: -1;
 
-}
+} */
