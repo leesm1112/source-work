@@ -7,6 +7,7 @@ body {
     font-family: sans-serif;
     color: #ffffff;
     font-size: 16px;
+    cursor: col-resize;
 }
 
 .heading {
@@ -45,9 +46,11 @@ body {
 } */
 
 body, html {
+    
     padding: 0;
     margin: 0;
     display: flex;
+    align-items: center;
     justify-items: center;
 }
 

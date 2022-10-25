@@ -1,26 +1,27 @@
 body {
-    background-attachment: fixed;
-    background-size: cover;
+    background-color: #0000FF;
+    /* background-image: url(https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif); */
     background-position: center center;
-    background-color: #ffffff;
+    width: 100vw;
+    height: 100vh;
+    align-items:center;
+    /* display: flex; */
+    /* margin: auto; */
+    /* position: absolute; */
 }
 
 .heading{
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'VT323', monospace;
+    color: #ffffff;
     font-weight: 900;
-    font-style: oblique;
     font-size: 36pt;
-    text-align:justify;
-    padding: 0px;
-    margin: 0px;
+    text-align:center;
 }
 
 .bodytxt{
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
+    font-family: 'VT323', monospace;
+    font-color: #ffffff;
+    font-weight: 900;
     font-size: 24pt;
-    text-align: justify;
-    padding: 0px;
-    margin: 0px;
-
+    text-align: center;
 }
