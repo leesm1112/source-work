@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambient</title>
+    <style>
+        p {
+            font-size: 16px;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 400;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            animation: 1s blink infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                /* font-size: 58px; */
+                opacity: 1.0;
+            }
+            50% {
+                /* font-size: 8px; */
+                opacity: 0.0;
+            }
+            100% {
+                /* font-size: 58px; */
+                opacity: 1.0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <p id="daily"></p>
+
+    <script>
+        let timezoneEl = document.querySelector('#daily');
+        // tempEl.innerText = 'Test';
+
+        const url = 'https://api.open-meteo.com/v1/forecast?latitude=40.71&longitude=-74.01&daily=sunrise,sunset&timezone=America%2FNew_York';
+
+        fetch(url)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data["daily"]["sunset"][0]);
+                timezoneEl.innerText = ('Today’s sunset time is: ' + data["daily"]["sunset"][0]); // cmd + shift + ] = '
+                let sunset = data["daily"]["sunset"][0];
+                let sunsetDate = new Date(sunset);
+                let now = new Date();
+                if (now < sunsetDate) {
+                    document.body.style.background = 'linear-gradient(0deg, rgba(253,29,29,1) 0%, rgba(255,149,0,1) 57%, rgba(255,231,0,1) 100%)';
+                } else {
+                    document.body.style.background = 'linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(255,149,0,1) 50%, rgba(36,29,253,1) 85%)';
+                }
+                // let sunset = data["daily"]["sunset"][0];
+                // timezoneEl.style.animation = data["daily"]["sunset"][0] + 's blink infinite';
+    
+            });
+
+    </script>
+</body>
+</html>

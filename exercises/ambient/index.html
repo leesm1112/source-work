@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambient</title>
+    <style>
+        p {
+            font-size: 58px;
+            font-family: sans-serif;
+            text-align: center;
+            /* transition: 5s all; */
+            animation: 1s blink infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                /* font-size: 58px; */
+                opacity: 1.0;
+            }
+            50% {
+                /* font-size: 8px; */
+                opacity: 0.0;
+            }
+            100% {
+                /* font-size: 58px; */
+                opacity: 1.0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p id="currentTemperature"></p>
+
+    <script>
+        let tempEl = document.querySelector('#currentTemperature');
+        // tempEl.innerText = 'Test';
+
+        const url = 'https://api.open-meteo.com/v1/forecast?latitude=40.71&longitude=-74.01&current_weather=true&temperature_unit=fahrenheit';
+
+        fetch(url)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                let currentTemp = data["current_weather"]["temperature"];
+                tempEl.innerText = currentTemp + 'ºF';
+                if (currentTemp > 60) {
+                    document.body.style.background = 'orange';
+                } else {
+                    tempEl.style.color = 'white';
+                    // document.body.style.color = 'white'; // 다른 텍스트컬러 바꾸는  법
+                    document.body.style.background = 'blue';
+                }
+                
+                let windSpeed = data["current_weather"]["windspeed"];
+                tempEl.style.animation = windSpeed + 's blink infinite';
+            });
+
+    </script>
+</body>
+</html>
