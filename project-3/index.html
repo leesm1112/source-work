@@ -4,13 +4,113 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 3</title>
-    <link href="styles.css" rel="stylesheet">
+    <title>Family Treasure</title>
+    <style>
+        .columns {
+            width: 20%;
+            align-items: center;
+            margin-right: 100px;
+        }
+        .hidden {
+            opacity: hidden;
+        }
+        .grid-container {
+            display: grid;
+            /* width: 100vw; */
+            height: 100vh;
+            gap: 1px;
+            cursor:auto;
+        }
+
+  .grid-container div {
+    border-radius: 0%;
+    border: 2px solid black;
+    /* background-color: white; */
+    background-image: url("images/Untitled-1-01.svg");
+
+    /* transition: 2s; */
+    /* background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); */
+  }
+
+  .hide {
+    opacity:0;
+  }
+  .show {
+    opacity:1;
+  }
+        header {
+            padding: 50px 50px;
+            height: 100%;
+            background-color: #ff6464;
+            background-image: linear-gradient(#6c64ff, #ff6464 80%, white);
+            /* margin-top: 50px; */
+            /* font-size: 0.3rem; */
+        }
+        footer {
+            padding: 20px 20px;
+            /* height: 100%; */
+            background-color: #6c64ff;
+            background-image: linear-gradient(white, #6c64ff 80%, #6c64ff);
+            /* margin-top: 50px; */
+            /* font-size: 0.3rem; */
+        }
+    </style>
 </head>
 <body>
-    <h1>Project 3</h1>
-    <img src="./images/project-3.png">
-    <br>
-    <a href="../index.html">Back to home</a>
+    <header id="header">
+        <div class="columns">
+                <p>possible that a foundation will allow both perspectives to operate simultaneously                 </p>
+    </header>
+    <div class="grid-container"></div>
+    <script>
+        let gC = document.querySelector('.grid-container');
+        let columns = Math.round(5);
+        let rows = Math.round(3);
+
+        let col = 0;
+        let templateColumns = "";
+        while (col < columns) {
+            templateColumns = templateColumns + parseInt(9) + "fr ";
+            col = col + 1;
+        }
+
+        let row = 0;
+        let templateRows = "";
+        while (row < rows) {
+            templateRows = templateRows + parseInt(9) + "fr ";
+            row = row + 1;
+        }
+
+        gC.style.gridTemplateColumns = templateColumns;
+        gC.style.gridTemplateRows = templateRows;
+
+        for (i = 0; i < columns*rows; i++) {
+            gC.innerHTML += "<div class='show'></div>"
+        }
+
+        let gCd = document.querySelectorAll('.grid-container div');
+        gCd.forEach(f => f.addEventListener('mouseenter', function() {
+            if (!this.classList.contains("hide")) {
+            }
+            // this.classList.remove('hide');
+            this.classList.add('hide');
+        }));
+    </script>
+    <footer id="footer">
+        <div class="columns">
+            <div class="columns">
+                <p>possible that a foundation will allow both perspectives to operate simultaneously 
+                </p>
+            </div>
+            <div class="columns">
+                <p>possible that a foundation will allow both perspectives to operate simultaneously 
+                </p>
+            </div>
+            <div class="columns">
+                <p>possible that a foundation will allow both perspectives to operate simultaneously </p>
+            </div>
+
+        </div>
+    </footer>
 </body>
 </html>

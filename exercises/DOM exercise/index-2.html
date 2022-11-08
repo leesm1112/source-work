@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h1 {
+      font-size: 50px;
+      font-family: sans-serif;
+    }
+
+    span {
+      display: inline-block;
+      /* transition: 0.5s all; */
+    }
+
+    .clicked {
+      transform: scale(2);
+      border-radius: 50%;
+      background-color: rgb(0, 13, 255);
+      /* color: transparent; */
+    }
+  </style>
+</head>
+<body>
+  <h1>동해물과 백두산이 마르고 닳도록 
+    하느님이 보우하사 우리나라만세. 
+    남산 위에 저 소나무, 철갑을 두른 듯 
+    바람서리 불변함은 우리 기상일세.
+    가을 하늘 공활한데 높고 구름 없이
+    밝은 달은 우리 가슴 일편단심일세.
+    이 기상과 이 맘으로 충성을 다하여
+    괴로우나 즐거우나 나라 사랑하세.
+    무궁화 삼천리 화려강산
+    대한 사람 대한으로 길이 보전하세
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+    안녕, 세계! 이것은 내 코딩 실험이다. 코딩으로 글을 모형으로 바꾸어준다. 신기하다 Hello, World! This is my experiment of coding. Hope you enjoys it!</h1>
+
+  <script>
+    // Get my heading
+    let heading = document.querySelector('h1');
+    
+    // Split my heading into individual characters
+    // First i need to get the inner text of my heading
+    let innerContents = heading.innerText;
+    // Then i have to split this up
+    let allCharacters = innerContents.split('');
+
+    // Keep track of new heading with spans
+    let newHeadingText = '';
+
+    // Wrap each of my chracters in <spans>
+    for (let i = 0; i < allCharacters.length; i++) {
+      // Get my current character
+      let currentChar = allCharacters[i];
+
+      if (currentChar === ' ') {
+        currentChar = '&nbsp;';
+      }
+
+      // Wrap my current character
+      // let wrapped = `<span>${currentChar}</span>`;
+      let wrapped = '<span>' + currentChar + '</span>';
+      
+      // Add my wrapped text into my new heading that i'm keeping track of
+      newHeadingText = newHeadingText + wrapped;
+    }
+
+    // Update my heading with my new characters wrapped in spans
+    heading.innerHTML = newHeadingText;
+
+    // Lets do some funky stuff with clicking
+
+    // Get all my new spans!
+    let spans = document.querySelectorAll('span');
+    
+    // go through all my spans
+    for (let i = 0; i < spans.length; i++) {
+      // get my current span
+      let currentSpan = spans[i];
+
+      // add my event listener
+      currentSpan.addEventListener('mouseenter', () => {
+        currentSpan.classList.add('clicked'); //toggle대신 add를 쓰면 모양이 안 없어짐
+      });
+    }
+  </script>
+</body>
+</html>

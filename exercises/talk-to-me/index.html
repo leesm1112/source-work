@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Talk to Me By Tags</title>
+
+    <!-- simple-tags JS -->
+    <script src="js/script.js"></script>
+	<style>
+	body{
+  		font-family: sans-serif;
+  		font-style: normal;
+  		font-weight: 700;
+  		font-size: 16px;
+  		background: #eee;
+	}
+	.simple-tags {
+  		box-sizing: border-box;
+  		margin: 0.5em;
+ 		padding: 0em 0.5em;
+ 		/* display: -webkit-box; */
+  		display: flex;
+  		flex-wrap: wrap;
+ 		/* font-size: 14px; */
+  		border-radius: 5px;
+	}
+
+  	.simple-tags > ul {
+    	list-style: none;
+    	padding: 0;
+    	margin: 0;
+    	display: -webkit-box;
+    	display: flex;
+    	flex-wrap: wrap; 
+  	}
+
+  .simple-tags ul li {
+    margin: 0.2em 0.2em;
+    padding: 0.5em;
+    color: black;
+    border: 2px solid black;
+	/* border-image: white; */
+    border-radius: 5px; 
+  }
+    
+  .simple-tags ul li a {
+    margin: 0.2em 0.2em;
+    text-decoration: none;
+    /* color: inherit;  */
+  }
+
+	.simple-tags input {
+    	padding: 2em 4em;
+    	box-sizing: border-box;
+    	border: 2px solid black;
+		border-radius: 5px;
+    	outline: none;
+    	font-size: inherit;
+    	font-family: inherit;
+    	/* color: inherit;  */
+	}
+	article li{
+		color: #efefef;
+   		font-size: 15px;
+   		margin-left: 33px;
+   		line-height: 1.5;
+   		padding: 5px;
+	}
+
+	article h1, article h2, article h3, article h4, article p{
+   		padding: 16px;
+   		color: #333;
+	}
+
+	@media only screen and (min-width: 720px){
+    main{
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto; 
+      padding: 24px;
+    }}
+	</style>
+</head>
+
+ <body>
+<main>
+ <article>
+	<h3>Talk to Me By Tags</h3>
+	<div class="simple-tags" id="container" data-simple-tags="Hello, There, Please, Type, Any, Texts, On, The, Box, Below, To, Add, Tags."></div>
+ </article>
+</main>
+
+
+<script>
+var el = document.getElementById('container');
+new Tags(el);
+</script>
+
+ </body>
+</html>

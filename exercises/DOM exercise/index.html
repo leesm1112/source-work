@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .elements { 
+      display: flex; 
+      gap: 20px;
+    }
+
+    .elements__item {
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      transition: filter 1s linear, transform 2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      filter: saturate(1);
+      transform: scale(1);
+    }
+
+    .rectangle {
+      width: 100%;
+      height: 200px;
+      background-color: var(--color);
+    }
+
+    .color--red { --color: red; }
+    .color--blue { --color: blue; }
+
+    .clicked {
+      filter: saturate(0);
+      transform: scale(.5);
+    }
+  </style>
+</head>
+<body>
+  <ul class="elements">
+    <li class="elements__item">
+      <div class="rectangle color--red"></div>
+      <p>Item 1</p>
+    </li>
+    <li class="elements__item">
+      <div class="rectangle color--blue"></div>
+      <p>Item 2</p>
+    </li>
+    <li class="elements__item">
+      <div class="rectangle color--blue"></div>
+      <p>Item 2</p>
+    </li>
+  </ul>
+
+  <script>
+    // 1. Get all my elements
+    let list = document.getElementsByClassName('elements__item');
+
+    // 2. Go through all my elements
+    for (let i = 0; i < list.length; i++) {
+      // Get my current element
+      let currentElement = list[i];
+      
+      // Add an event listener to my element that handles clicking
+      currentElement.addEventListener('click', () => {
+        // The click event should add a class 'clicked' to my current element
+        currentElement.classList.toggle('clicked');
+      });
+      
+    }
+
+  </script>
+</body>
+</html>
