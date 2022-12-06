@@ -1,0 +1,60 @@
+body {
+    /* background: linear-gradient(90deg, rgba(255,0,194,1) 0%, rgba(255,196,0,1) 49%, rgba(0,212,255,1) 100%); */
+    /* background: #efefef; */
+
+    /* !! vera's color 1: orange */
+    /* background: rgb(255, 68, 29); */
+
+    /* !!vera's color 2: black */
+    /* background: black; */
+
+    /* !! my color 1: neon green*/
+    background: #AEFF30;
+
+    margin: 0;
+}
+
+.grid-container {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    gap: 1px;
+    cursor:auto;
+  }
+
+  .grid-container div {
+    /* background-color: linear-gradient(90deg, rgba(199,192,253,1) 25%, rgba(157,245,55,1) 100%); */
+    /* transition: 0.5s; */
+    /* background: black; */
+
+    /* !! vera's color 1: green to purple */
+    /* border-radius: 100%;
+    border-style: 1px solid black;
+    background: linear-gradient(45deg, rgba(199,192,253,1) 25%, rgba(157,245,55,1) 80%);  */
+
+    /* !! vera's color 2: green to magenta */
+    /* background: linear-gradient(180deg, rgba(130,253,49,1) 25%, rgba(252,22,126,1) 75%);
+
+    /* !! my color 1: purple to red */
+    border-radius: 100%;
+    border-style: 1px solid black;
+    background: linear-gradient(180deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
+    /* !! my color 2:  */
+    /* background: linear-gradient(90deg, rgba(255,0,194,1) 0%, rgba(255,196,0,1) 49%, rgba(0,212,255,1) 100%); */
+
+  }
+
+  .hide {
+    opacity:0;
+  }
+  .show {
+    opacity:1;
+  }
+
+ /* #grid-item : active {
+ } */
+
+ .audio {
+  align-content: center;
+ }

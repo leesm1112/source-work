@@ -1,116 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Family Treasure</title>
-    <style>
-        .columns {
-            width: 20%;
-            align-items: center;
-            margin-right: 100px;
-        }
-        .hidden {
-            opacity: hidden;
-        }
-        .grid-container {
-            display: grid;
-            /* width: 100vw; */
-            height: 100vh;
-            gap: 1px;
-            cursor:auto;
-        }
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+		<title>Heirloom</title>
 
-  .grid-container div {
-    border-radius: 0%;
-    border: 2px solid black;
-    /* background-color: white; */
-    background-image: url("images/Untitled-1-01.svg");
+	<style>
+		* {
+			box-sizing: border-box;
+			/* margin: 0;
+			padding: 0; */
+		}
+		body {
+			background-color: rgb(150, 135, 76);
+			overflow-x: hidden;
+			font-family: 'Crimson Text', serif;
+			font-weight: 400;
+			font-size: 28pt;
+			color: rgb(255, 255, 255);
+			/* height: 50vh; */
+			margin-top: 150px;
+			margin-bottom: 100px;
+			margin-left: 40vh;
+			margin-right: 40vh;
 
-    /* transition: 2s; */
-    /* background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); */
-  }
+		}
+		video {
+			position: absolute;
+		}
+		audio {
+			cursor: pointer !important;
+		}
 
-  .hide {
-    opacity:0;
-  }
-  .show {
-    opacity:1;
-  }
-        header {
-            padding: 50px 50px;
-            height: 100%;
-            background-color: #ff6464;
-            background-image: linear-gradient(#6c64ff, #ff6464 80%, white);
-            /* margin-top: 50px; */
-            /* font-size: 0.3rem; */
-        }
-        footer {
-            padding: 20px 20px;
-            /* height: 100%; */
-            background-color: #6c64ff;
-            background-image: linear-gradient(white, #6c64ff 80%, #6c64ff);
-            /* margin-top: 50px; */
-            /* font-size: 0.3rem; */
-        }
-    </style>
+		.draggable-imgs {
+			/* height: 150vh;
+			width: 100vw; */
+			position: relative;
+		}
+
+		.draggable-imgs img {
+			width: 20vw;
+			min-width: 150px;
+			cursor: move;
+			position: absolute;
+		}
+
+.draggable-imgs div {
+	padding: 40px;
+	position: absolute;
+	cursor: move;
+}
+
+	</style>
 </head>
 <body>
-    <header id="header">
-        <div class="columns">
-                <p>possible that a foundation will allow both perspectives to operate simultaneously                 </p>
-    </header>
-    <div class="grid-container"></div>
-    <script>
-        let gC = document.querySelector('.grid-container');
-        let columns = Math.round(5);
-        let rows = Math.round(3);
+	<div class="draggable-imgs">
+		<img src="./assets/headstone2.png">
+		<img src="./assets/christmas_vinyl1.png">
+		<video width="320" height="240" controls>
+			<source src="./assets/christmas_vinyl.mov">
+		</video>
+		<div>
+			<audio controls>
+				<source src="../assets/hymn.m4a">
+			</audio>
+		</div>
+		<img src="./assets/leefamheirloom1.png">
+		<img src="./assets/reunion.png">
+		<img src="./assets/dairy2.png">
+		<img src="./assets/portrait2.png">
+		<img src="./assets/hymn.png">
+		<img src="./assets/jhongsoo_baby.png
+		">
 
-        let col = 0;
-        let templateColumns = "";
-        while (col < columns) {
-            templateColumns = templateColumns + parseInt(9) + "fr ";
-            col = col + 1;
-        }
+		<p>
+			This story started from my family’s Christmas Eve tradition. My great-grandfather, Gyu Shin Lee, passed away on Christmas Eve and my family gathers at home every Christmas Eve to share memories, eulogy, and his legacy through a Christian memorial service. My grandfather, Jhong Soo Lee, brings his parents' portrait, my great-grandfather’s hand-calligraphed Lee family history book, Korean traditional genealogy, Jokbo, and his diary. There is an old Korean proverb, ‘A tiger dies and leaves his skin; a man dies and leaves his name.’ These objects endured during the turbulent history and, as the fourth generation, I feel responsible to sustain his legacy and transferring family values to later history through printed and digital media with a new interpretation of family genealogy.		</p>
+		<p>
+			The dialogue in the book was adapted from many years of recordings of the memorial service. The story preserves narratives of an intergenerational Korean family and brings special bonds between the generations, and gives a sense of belonging. Looking at my great-grandfather's legacy, I ask myself – what do family and connection mean to me in this modern society and how can I continue to archive, persevere, interpret and recreate the legacy to set my identity?		</p>
+	</div>
 
-        let row = 0;
-        let templateRows = "";
-        while (row < rows) {
-            templateRows = templateRows + parseInt(9) + "fr ";
-            row = row + 1;
-        }
+	<script>
+		let imgs = document.querySelectorAll(".draggable-imgs img");
+		for (i=0; i<imgs.length; i++) {
+			dragElement(imgs[i]);
+			imgs[i].style.top = Math.random()*80 + "%";
+			imgs[i].style.left = Math.random()*80 + "%";
+			imgs[i].style.transform = "rotate(" + (Math.random()*20-10) + "deg)";
+		}
+		let vids = document.querySelectorAll(".draggable-imgs video");
+		for (i=0; i<vids.length; i++) {
+			dragElement(vids[i]);
+			vids[i].style.top = Math.random()*80 + "%";
+			vids[i].style.left = Math.random()*80 + "%";
+			vids[i].style.transform = "rotate(" + (Math.random()*20-10) + "deg)";
+		}
+		let auds = document.querySelectorAll(".draggable-imgs div");
+		for (i=0; i<auds.length; i++) {
+			dragElement(auds[i]);
+			auds[i].style.top = Math.random()*80 + "%";
+			auds[i].style.left = Math.random()*80 + "%";
+			auds[i].style.transform = "rotate(" + (Math.random()*20-10) + "deg)";
+		}
 
-        gC.style.gridTemplateColumns = templateColumns;
-        gC.style.gridTemplateRows = templateRows;
-
-        for (i = 0; i < columns*rows; i++) {
-            gC.innerHTML += "<div class='show'></div>"
-        }
-
-        let gCd = document.querySelectorAll('.grid-container div');
-        gCd.forEach(f => f.addEventListener('mouseenter', function() {
-            if (!this.classList.contains("hide")) {
-            }
-            // this.classList.remove('hide');
-            this.classList.add('hide');
-        }));
-    </script>
-    <footer id="footer">
-        <div class="columns">
-            <div class="columns">
-                <p>possible that a foundation will allow both perspectives to operate simultaneously 
-                </p>
-            </div>
-            <div class="columns">
-                <p>possible that a foundation will allow both perspectives to operate simultaneously 
-                </p>
-            </div>
-            <div class="columns">
-                <p>possible that a foundation will allow both perspectives to operate simultaneously </p>
-            </div>
-
-        </div>
-    </footer>
+		function dragElement(elmnt) {
+			let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+			elmnt.onmousedown = dragMouseDown;
+			
+			function dragMouseDown(e) {
+				e = e || window.event;
+				e.preventDefault();
+				// get the mouse cursor position at startup:
+				pos3 = e.clientX;
+				pos4 = e.clientY;
+				document.onmouseup = closeDragElement;
+				// call a function whenever the cursor moves:
+				document.onmousemove = elementDrag;
+				for (i=0; i<networkLinks.length; i++) {
+					if (networkLinks[i] != e) {
+					}
+				}
+			}
+		
+			function elementDrag(e) {
+				e = e || window.event;
+				e.preventDefault();
+				// calculate the new cursor position:
+				pos1 = pos3 - e.clientX;
+				pos2 = pos4 - e.clientY;
+				pos3 = e.clientX;
+				pos4 = e.clientY;
+				console.log(elmnt.offsetTop - pos2);
+				// set the element's new position:
+				elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+				elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+			}
+		
+			function closeDragElement() {
+				// stop moving when mouse button is released:
+				document.onmouseup = null;
+				document.onmousemove = null;
+			}
+		}
+	</script>
 </body>
 </html>
