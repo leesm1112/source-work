@@ -1,5 +1,7 @@
 /* Your CSS Here! */
 body {
+    /* width: 100vw;
+    height: 100vh; */
     background-color: #000000;
 }
 
@@ -12,7 +14,8 @@ body {
 }
 
 .center {
-    position: relative;
+    
+    position: absolute;
     display: flex;
 }
 
@@ -69,26 +72,72 @@ body {
     border-top: 0;
 }
 
+.plant__pot {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    background-color: rgb(63, 67, 79);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+.plant__top {
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    top: -15px;
+    background: hwb(48 33% 58%);
+    border-color: hwb(234 25% 63%);
+    border-radius: 100%;
+}
+
+.plant__leaf1 {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: -190px;
+    left: 400px;
+    background-color: rgb(0, 255, 94);
+    border-radius: 10px;
+    border-top-left-radius: 180px;
+    border-bottom-right-radius: 180px;
+    z-index: 1;
+}
+.plant__leaf3 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -90px;
+    left: 300px;
+    background-color: rgb(143, 252, 167);
+    border-radius: 10px;
+    border-top-right-radius: 190px;
+    border-bottom-left-radius: 190px;
+    z-index: 2;
+}
+.plant__leaf4 {
+    width: 150px;
+    height: 250px;
+    position: absolute;
+    top: -240px;
+    left: 250px;
+    background-color: rgb(34, 255, 0);
+    border-radius: 10px;
+    border-top-right-radius: 180px;
+    border-bottom-left-radius: 180px;
+    z-index: 1;
+}
+
+
 .txt {
+    width: 100vw;
+    bottom: 40px;
+
     color: yellow;
-    font-size: 48pt;
+    font-size: 24pt;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    right: 300px;
     padding: 50px;
-    margin: 0px; 
+    /* margin: 0px;  */
     position: absolute;
 
 }
-/* .plant_pot {
-    width: 150px;
-    height: 80px;
-    background-color: wheat;
-
-    position: relative;
-    left: 0%;
-    bottom: 10%;
-
-    z-index: -1;
-
-} */
